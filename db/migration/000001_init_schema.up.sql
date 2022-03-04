@@ -15,7 +15,7 @@ CREATE TABLE "entry" (
 
 CREATE TABLE "transfer" (
   "id" bigserial PRIMARY KEY,
-  "from_accountid" bigint NOT NULL,
+  "from_account_id" bigint NOT NULL,
   "to_account_id" bigint NOT NULL,
   "amount" bigint NOT NULL,
   "created_at" timestamptz NOT NULL DEFAULT (now())
@@ -23,7 +23,7 @@ CREATE TABLE "transfer" (
 
 ALTER TABLE "entry" ADD FOREIGN KEY ("account_id") REFERENCES "account" ("id");
 
-ALTER TABLE "transfer" ADD FOREIGN KEY ("from_accountid") REFERENCES "account" ("id");
+ALTER TABLE "transfer" ADD FOREIGN KEY ("from_account_id") REFERENCES "account" ("id");
 
 ALTER TABLE "transfer" ADD FOREIGN KEY ("to_account_id") REFERENCES "account" ("id");
 
@@ -31,11 +31,11 @@ CREATE INDEX ON "account" ("owner");
 
 CREATE INDEX ON "entry" ("account_id");
 
-CREATE INDEX ON "transfer" ("from_accountid");
+CREATE INDEX ON "transfer" ("from_account_id");
 
 CREATE INDEX ON "transfer" ("to_account_id");
 
-CREATE INDEX ON "transfer" ("from_accountid", "to_account_id");
+CREATE INDEX ON "transfer" ("from_account_id", "to_account_id");
 
 COMMENT ON COLUMN "entry"."amount" IS 'can be negative or positive';
 
