@@ -41,6 +41,7 @@ func (server *Server) createTransfer(ctx *gin.Context) {
 	result, err := server.store.TransferTx(ctx, arg)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
 	}
 
 	ctx.JSON(http.StatusOK, result)
