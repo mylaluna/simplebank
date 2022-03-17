@@ -17,10 +17,13 @@ This is a sample project that aims to learn and practice a Go language based web
 ## Web
 
 - Web Framework: [Gin](https://github.com/gin-gonic/gin)
+- Security Token: [PASETO](https://github.com/o1egl/paseto)
+- Optional token: [JWT](https://github.com/dgrijalva/jwt-go)
 
 ## Test
 
 - [Testify](https://github.com/stretchr/testify) (Beware of upcoming v2)
+- [gomock](https://github.com/golang/mock)
 - Postman
 
 ## Container
@@ -31,5 +34,5 @@ This is a sample project that aims to learn and practice a Go language based web
 
 - [Viper](https://github.com/spf13/viper) (Beware of upcoming v2)
 
-... to be continued
+
 
