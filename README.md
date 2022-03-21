@@ -34,5 +34,13 @@ This is a sample project that aims to learn and practice a Go language based web
 
 - [Viper](https://github.com/spf13/viper) (Beware of upcoming v2)
 
+## AWS CLI
+
+Override production app.env with aws secret values using [jq](https://stedolan.github.io/jq/) (comman-line JSON processor):
+
+```bash
+aws secretsmanager get-secret-value --secret-id simple_bank --query SecretString --output text | jq -r 'to_entries|map("\(.key)=\(.value)")|.[]' > app.env
+```
+
 
 
